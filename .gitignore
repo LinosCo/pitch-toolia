@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.pdf
+export-pdf.mjs
+package*.json
+.claude/
+*.mp4
