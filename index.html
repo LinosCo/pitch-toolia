@@ -902,7 +902,11 @@
     nav img { height: 16px; }
     nav a { font-size: 10px; }
 
-    .hero { min-height: 500px; padding: 48px 24px; }
+    .hero {
+      min-height: 100vh; padding: 48px 24px;
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6)), url('./foto-rotonda.webp') center/cover;
+    }
+    .hero video { display: none; }
     .hero h1 { font-size: 40px; }
     .hero p { font-size: 15px; }
     .hero-scroll { bottom: 24px; right: 24px; font-size: 9px; }
