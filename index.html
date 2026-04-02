@@ -183,7 +183,7 @@
 
   /* ── DARK SECTION ── */
   .dark-section {
-    background: var(--black);
+    background: #1a1a1a;
     color: var(--white);
   }
   .dark-section .s-title { color: var(--white); }
@@ -570,46 +570,51 @@
     height: 360px;
   }
 
-  /* ── FEATURE ROWS (case study) ── */
-  .feature-row {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 64px;
-    align-items: center;
+  /* ── FEATURE SLIDER (case study) ── */
+  .feature-slider-wrap {
+    overflow: hidden;
+    position: relative;
     padding: 48px 0;
-    border-bottom: 1px solid rgba(255,255,255,.06);
   }
-  .feature-row:last-child { border-bottom: none; }
-  .feature-row.reverse {
-    grid-template-columns: 1fr 280px;
+  .feature-slider-track {
+    display: flex;
+    gap: 40px;
+    animation: featureScroll 30s linear infinite;
+    width: max-content;
   }
-  .feature-row.reverse .feature-phone {
-    order: 2;
+  .feature-slider-track:hover {
+    animation-play-state: paused;
   }
-  .feature-row.reverse .feature-text {
-    order: 1;
+  .feature-slide {
+    flex: 0 0 auto;
+    width: 260px;
+    text-align: center;
   }
   .feature-phone {
     display: flex;
     justify-content: center;
+    margin-bottom: 24px;
   }
   .feature-phone img {
     height: 420px;
   }
   .feature-text h3 {
     font-family: var(--display);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     letter-spacing: -.01em;
   }
   .feature-text p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     color: rgba(255,255,255,.5);
-    line-height: 1.75;
-    max-width: 440px;
+    line-height: 1.65;
+  }
+  @keyframes featureScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* ── ORBIT GRAPH ── */
@@ -890,10 +895,8 @@
     .orbit-ring-mid { inset: 40px; }
     .orbit-ring-inner { inset: 80px; }
     .orbit-center { inset: 80px; font-size: 28px; }
-    .feature-row, .feature-row.reverse {
-      grid-template-columns: 200px 1fr;
-    }
-    .feature-phone img { height: 340px; }
+    .feature-phone img { height: 360px; }
+    .feature-slide { width: 240px; }
     .kpi-strip { grid-template-columns: 1fr; gap: 32px; }
     .kpi { padding: 20px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
     .kpi:first-child { padding-left: 0; }
@@ -941,16 +944,11 @@
 
     .card-icon { width: 40px; height: 40px; }
 
-    .feature-row, .feature-row.reverse {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      padding: 32px 0;
-    }
-    .feature-row.reverse .feature-phone { order: 0; }
-    .feature-row.reverse .feature-text { order: 0; }
     .feature-phone img { height: 300px; }
-    .feature-text h3 { font-size: 22px; }
+    .feature-slide { width: 220px; }
+    .feature-text h3 { font-size: 20px; }
     .feature-text p { font-size: 14px; }
+    .feature-slider-track { gap: 28px; }
 
     .orbit-section { grid-template-columns: 1fr; gap: 32px; }
     .orbit-wrap { width: 240px; height: 240px; }
@@ -1058,47 +1056,87 @@
   <div style="background:url('./foto-rotonda.webp') center/cover; min-height:480px;"></div>
 </div>
 
-<!-- 4. FEATURE ROWS — La Rotonda in azione -->
+<!-- 4. FEATURE SLIDER — La Rotonda in azione -->
 <section class="dark-section">
-  <div class="section-inner fade-in">
-
-    <div class="feature-row fade-left">
-      <div class="feature-phone"><img src="./App/2.png" alt="Crea la tua visita"></div>
-      <div class="feature-text">
-        <h3>Scegli come esplorare</h3>
-        <p>Crea la tua visita o segui un itinerario consigliato. L'app si adatta a te, non il contrario.</p>
-      </div>
+  <div class="section-inner fade-in" style="max-width:100%; padding:0;">
+    <div style="max-width:1120px; margin:0 auto; padding:0 64px;">
+      <div class="s-label">L'app in azione</div>
+      <div class="s-title" style="color:var(--white); margin-bottom:0;">Cinque schermate, un'esperienza completa</div>
     </div>
-
-    <div class="feature-row reverse fade-right">
-      <div class="feature-phone"><img src="./App/4.png" alt="Preferenze"></div>
-      <div class="feature-text">
-        <h3>Dimmi cosa ti piace</h3>
-        <p>Architettura, arte, botanica — indica i tuoi interessi e l'app mostra i contenuti più rilevanti per te.</p>
-      </div>
-    </div>
-
-    <div class="feature-row fade-left">
-      <div class="feature-phone"><img src="./App/5.png" alt="Tempo disponibile"></div>
-      <div class="feature-text">
-        <h3>Quanto tempo hai?</h3>
-        <p>30 minuti o 2 ore? L'app costruisce il percorso perfetto per il tempo che hai a disposizione.</p>
-      </div>
-    </div>
-
-    <div class="feature-row reverse fade-right">
-      <div class="feature-phone"><img src="./App/8.png" alt="Mappa interattiva"></div>
-      <div class="feature-text">
-        <h3>Sempre orientato</h3>
-        <p>Mappa con tutti i punti di interesse. Sai sempre dove sei, cosa c'è intorno e come raggiungerlo.</p>
-      </div>
-    </div>
-
-    <div class="feature-row fade-left">
-      <div class="feature-phone"><img src="./App/7.png" alt="Scheda POI"></div>
-      <div class="feature-text">
-        <h3>Racconto su ogni punto</h3>
-        <p>Ogni tappa ha la sua storia: immagini, testo e audio. Il visitatore scopre il luogo nel modo che preferisce.</p>
+    <div class="feature-slider-wrap">
+      <div class="feature-slider-track">
+        <!-- original set -->
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/2.png" alt="Crea la tua visita"></div>
+          <div class="feature-text">
+            <h3>Scegli come esplorare</h3>
+            <p>Crea la tua visita o segui un itinerario consigliato.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/4.png" alt="Preferenze"></div>
+          <div class="feature-text">
+            <h3>Dimmi cosa ti piace</h3>
+            <p>Indica i tuoi interessi e l'app mostra i contenuti più rilevanti.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/5.png" alt="Tempo disponibile"></div>
+          <div class="feature-text">
+            <h3>Quanto tempo hai?</h3>
+            <p>L'app costruisce il percorso perfetto per il tempo che hai.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/8.png" alt="Mappa interattiva"></div>
+          <div class="feature-text">
+            <h3>Sempre orientato</h3>
+            <p>Mappa con tutti i punti di interesse e indicazioni in tempo reale.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/7.png" alt="Scheda POI"></div>
+          <div class="feature-text">
+            <h3>Racconto su ogni punto</h3>
+            <p>Ogni tappa ha la sua storia: immagini, testo e audio.</p>
+          </div>
+        </div>
+        <!-- duplicate set for seamless loop -->
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/2.png" alt="Crea la tua visita"></div>
+          <div class="feature-text">
+            <h3>Scegli come esplorare</h3>
+            <p>Crea la tua visita o segui un itinerario consigliato.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/4.png" alt="Preferenze"></div>
+          <div class="feature-text">
+            <h3>Dimmi cosa ti piace</h3>
+            <p>Indica i tuoi interessi e l'app mostra i contenuti più rilevanti.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/5.png" alt="Tempo disponibile"></div>
+          <div class="feature-text">
+            <h3>Quanto tempo hai?</h3>
+            <p>L'app costruisce il percorso perfetto per il tempo che hai.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/8.png" alt="Mappa interattiva"></div>
+          <div class="feature-text">
+            <h3>Sempre orientato</h3>
+            <p>Mappa con tutti i punti di interesse e indicazioni in tempo reale.</p>
+          </div>
+        </div>
+        <div class="feature-slide">
+          <div class="feature-phone"><img src="./App/7.png" alt="Scheda POI"></div>
+          <div class="feature-text">
+            <h3>Racconto su ogni punto</h3>
+            <p>Ogni tappa ha la sua storia: immagini, testo e audio.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
