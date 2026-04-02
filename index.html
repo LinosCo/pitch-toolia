@@ -70,12 +70,18 @@
     overflow: hidden;
     background: var(--black);
   }
-  .hero video {
+  .hero-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .hero-mobile-bg {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)), url('./foto-rotonda.webp') center/cover;
   }
   .hero-content {
     position: relative;
@@ -903,7 +909,8 @@
     nav a { font-size: 10px; }
 
     .hero { min-height: 100vh; padding: 48px 24px; }
-    .hero video { object-position: center center; }
+    .hero-video { display: none; }
+    .hero-mobile-bg { display: block; }
     .hero h1 { font-size: 40px; }
     .hero p { font-size: 15px; }
     .hero-scroll { bottom: 24px; right: 24px; font-size: 9px; }
@@ -976,7 +983,11 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="top" style="background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)), url('./foto-rotonda.webp') center/cover;">
+<section class="hero" id="top">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="./Product Launch Video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-mobile-bg"></div>
   <div class="hero-content">
     <div class="hero-label">VOLER.AI presenta</div>
     <h1>Toolia<br>Studio</h1>
