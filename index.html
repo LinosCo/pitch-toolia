@@ -902,11 +902,8 @@
     nav img { height: 16px; }
     nav a { font-size: 10px; }
 
-    .hero {
-      min-height: 100vh; padding: 48px 24px;
-      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6)), url('./foto-rotonda.webp') center/cover;
-    }
-    .hero video { display: none; }
+    .hero { min-height: 100vh; padding: 48px 24px; }
+    .hero video { object-position: center center; }
     .hero h1 { font-size: 40px; }
     .hero p { font-size: 15px; }
     .hero-scroll { bottom: 24px; right: 24px; font-size: 9px; }
@@ -980,7 +977,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <video autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="./foto-rotonda.webp">
     <source src="./Product Launch Video.mp4" type="video/mp4">
   </video>
   <div class="hero-scroll">Scorri<div class="scroll-line"></div></div>
