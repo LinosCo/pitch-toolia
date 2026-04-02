@@ -867,6 +867,103 @@
     font-weight: 400;
     font-style: italic;
   }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — tablet
+     ══════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    section { padding: 80px 40px; }
+    .split { grid-template-columns: 1fr; min-height: auto; }
+    .split-col { padding: 60px 40px; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .output-grid { grid-template-columns: 1fr 1fr; }
+    .orbit-section { grid-template-columns: 1fr; gap: 48px; }
+    .orbit-wrap { width: 280px; height: 280px; }
+    .orbit-ring-mid { inset: 40px; }
+    .orbit-ring-inner { inset: 80px; }
+    .orbit-center { inset: 80px; font-size: 28px; }
+    .feature-row, .feature-row.reverse {
+      grid-template-columns: 200px 1fr;
+    }
+    .feature-phone img { height: 340px; }
+    .kpi-strip { grid-template-columns: 1fr; gap: 32px; }
+    .kpi { padding: 20px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .kpi:first-child { padding-left: 0; }
+    .three-col { grid-template-columns: 1fr; }
+    .three-col-item { padding: 32px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .three-col-item:first-child { padding-left: 0; }
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE — mobile
+     ══════════════════════════════════════ */
+  @media (max-width: 640px) {
+    nav { padding: 16px 24px; }
+    nav img { height: 16px; }
+    nav a { font-size: 10px; }
+
+    .hero { min-height: 500px; padding: 48px 24px; }
+    .hero h1 { font-size: 40px; }
+    .hero p { font-size: 15px; }
+    .hero-scroll { bottom: 24px; right: 24px; font-size: 9px; }
+    .hero-scroll .scroll-line { height: 32px; }
+
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 100%; }
+    .s-title { font-size: 32px !important; margin-bottom: 20px; }
+    .s-body { font-size: 15px; }
+
+    .pullquote { padding: 80px 24px; }
+    .pullquote .pq-text { font-size: 28px; }
+    .pullquote .pq-sub { font-size: 14px; }
+
+    .marquee-track span { font-size: 14px; padding: 0 24px; }
+    .marquee-track span::after { padding-left: 24px; }
+
+    .split { grid-template-columns: 1fr; }
+    .split-col { padding: 48px 24px; }
+    .split > div[style*="background:url"] { min-height: 280px !important; }
+
+    .grid-2 { grid-template-columns: 1fr; gap: 32px; }
+    .grid-3 { grid-template-columns: 1fr; gap: 32px; }
+    .grid-4 { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .output-grid { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+
+    .card-icon { width: 40px; height: 40px; }
+
+    .feature-row, .feature-row.reverse {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 32px 0;
+    }
+    .feature-row.reverse .feature-phone { order: 0; }
+    .feature-row.reverse .feature-text { order: 0; }
+    .feature-phone img { height: 300px; }
+    .feature-text h3 { font-size: 22px; }
+    .feature-text p { font-size: 14px; }
+
+    .orbit-section { grid-template-columns: 1fr; gap: 32px; }
+    .orbit-wrap { width: 240px; height: 240px; }
+    .orbit-ring-mid { inset: 32px; }
+    .orbit-ring-inner { inset: 64px; }
+    .orbit-center { inset: 64px; font-size: 24px; }
+    .orbit-node { width: 44px; height: 44px; }
+    .orbit-node svg { width: 18px; height: 18px; }
+    .orbit-card { padding: 16px 20px; }
+    .orbit-card h4 { font-size: 14px; }
+    .orbit-card p { font-size: 12px; }
+
+    .steps-row { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .step-num { font-size: 40px; }
+
+    footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+
+    /* Fix inline grid in metodo split */
+    .split-col div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+  }
 </style>
 </head>
 <body>
